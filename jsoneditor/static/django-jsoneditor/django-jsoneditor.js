@@ -21,11 +21,10 @@ django.jQuery(function () {
             }
             $nxt.detach();
             $nxt = django.jQuery('<div id="' + id + '" name="' + name + '"></div>');
-            $nxt.css('height', '400px');
             $f.parent().append($nxt);
             var fnc = function (f, nxt, value) {
                 var editor = new jsoneditor.JSONEditor(nxt, {
-                    mode: 'code',
+                    mode: 'tree',
                     modes: ['code', 'view', 'tree'], // allowed modes
                     change: function () {
                         f.value = JSON.stringify(editor.get());
